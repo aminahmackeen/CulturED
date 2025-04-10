@@ -13,9 +13,18 @@
             --font-color: #333;
             --button-bg: #B0C4B1;
         }
+        @font-face {
+            font-family: 'Macando';
+            src: url(Macondo,Nunito_Sans,Raleway/Macondo/Macondo-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: 'League';
+            src: url(League_Spartan,Macondo,Nunito_Sans,Raleway/League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
+        }
 
         body {
-            font-family: 'League Spartan', sans-serif;
+            font-family: 'League', sans-serif;
             background: var(--bg-gradient);
             margin: 0;
             padding: 20px;
@@ -23,7 +32,8 @@
         }
 
         .header {
-            font-size: 2em;
+            font-size: 3.5em;
+            font-family: 'Macando';
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -41,6 +51,7 @@
             font-size: 1em;
             border-radius: 6px;
             border: 1px solid #aaa;
+            font-family: 'League';
         }
 
         .filter-bar button {
@@ -105,9 +116,9 @@
             justify-content: center;
             text-align: center;
             font-size: 0.9em;
-            font-family: 'League Spartan', Calibri, sans-serif;
+            font-family: 'League', Calibri, sans-serif;
             border-radius: 10px;
-            color: white;
+            color: black;
             box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
