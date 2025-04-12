@@ -4,3 +4,22 @@
 /* header {
 
 } */
+
+.header-btn {
+    color: white;
+}
+
+.nav {
+    align-items: center;
+}
+
+.header-nav {
+    position: static;
+    top: 0;
+    width: 100%;
+    color: white;
+    background-color: #4A5759;
+    padding: .5rem 3rem .5rem 1rem;
+    /* font-family: var(--font-header); */
+    font-size: 1.5rem;
+}
