@@ -20,8 +20,11 @@ body {
     font-family: 'League', sans-serif;
     background: var(--bg-gradient);
     margin: 0;
-    /* padding: 20px; */
     color: #DEDBD2;
+}
+
+body main {
+    padding: 20px;
 }
 
 .header {
