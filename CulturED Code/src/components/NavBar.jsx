@@ -31,15 +31,16 @@ import '../index.css';
 
 
 export default function NavBar(props) {
-
-    return(
+    return (
         <header>
             <nav className="header-nav">
+                <div className="logo">
+                    <Link to="/">
+                        <img src="../../public/cultured_logo-removebg-preview.png" alt="CulturED Logo" />
+                    </Link>
+                    <h2 className="title">CulturED</h2>
+                </div>
                 <ul className="nav">
-                    <li className="nav-item">
-                        <Link to="#" className="btn header-btn logo">CultureED</Link>
-                    </li>
-                    <li className="nav-item empty"></li>
                     <li className="nav-item py-1 px-2">
                         <Link to="/explorepage" className="btn header-btn">Explore</Link>
                     </li>
@@ -47,13 +48,14 @@ export default function NavBar(props) {
                         <Link to="#" className="btn header-btn">My Communities</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <Link to="#" className="btn header-btn">Share Story</Link>
+                        <Link to="/sharestory" className="btn header-btn">Share Story</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
                         <Link to="#" className="btn header-btn">Resources</Link>
                     </li>
-                </ul> 
+                </ul>
             </nav>
         </header>
     );
 }
+
