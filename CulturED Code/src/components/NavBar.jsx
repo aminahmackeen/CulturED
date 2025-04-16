@@ -38,7 +38,7 @@ export default function NavBar(props) {
                     <Link to="/">
                         <img src="../../public/cultured_logo-removebg-preview.png" alt="CulturED Logo" />
                     </Link>
-                    <h2 className="title">CulturED</h2>
+                    <Link to="/"><h2 className="title">CulturED</h2></Link>
                 </div>
                 <ul className="nav">
                     <li className="nav-item py-1 px-2">
