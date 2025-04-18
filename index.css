@@ -1,6 +1,221 @@
 /* theme hex color codes:
 #EDAFB8, #F7E1D7, #DEDBD2, #B0C4B1, #4A5759 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* header {
+body {
+    font-family: 'League Spartan';
+    color: #4A5759;
+}
 
-} */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h1 {
+    font-family: 'Macondo';
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    color: #591E3C;
+}
+
+.comm-button {
+    margin-left: 1rem;
+}
+
+h3, p {
+    font-family: 'League Spartan';
+    color: black;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+nav {
+    background: #4A5759;
+    color: #DEDBD2;
+    margin-bottom: 1rem;
+}
+
+nav > ul {
+    margin-left: 2rem;
+    padding: 0.5em;
+}
+  
+nav > ul > li {
+    display: inline-block;
+}
+
+li > a {
+    color: #DEDBD2;
+    float: right;
+    flex-flow:row;
+    margin: 0.3rem 1rem;
+}
+
+.WebName {
+    font-family: 'Macondo';
+    font-size: 30px;
+    color: #DEDBD2;
+    margin-top: 1rem;
+}
+
+#edit {
+    color: #591E3C;
+    text-decoration:underline;
+}
+
+.stories-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.story-card {
+    background-color: #d1d6cd;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 180px;
+}
+
+.story-title {
+    font-size: 1rem;
+    color: #000;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.story-meta {
+    font-size: 0.8rem;
+}
+
+.container {
+    display: inline-flex;
+    margin: 0 1.5rem;
+}
+
+.container div {
+    margin: 0 1rem;
+}
+
+.member-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.member-section h2 {
+    color:#591E3C;
+    margin-bottom: 1rem;
+}
+
+table {
+    /* table-layout: fixed; */
+    width: 40rem;
+    background-color: #DEDBD2;
+}
+
+.member-header {
+    display: none;
+}
+
+table tr td:last-child {
+    width: 1rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #fcfaf4;
+}
+
+tr {
+    height: fit-content;
+}
+
+td {
+    font-size: 20px;
+    padding: 0.25rem;
+}
+
+.comm-edit {
+    padding-top: 2.5rem;
+}
+
+.comm-edit p {
+    color: #591E3C;
+    font-size: 20px;
+    margin: 0.5rem;
+}
+
+.invite-link {
+    background-color: #fcfaf4;
+    padding: 0.5rem;
+}
+
+.invite-link p {
+    color: #000;
+    opacity: 0.5;
+}
+
+.button .del-btn {
+    padding-left: 0.25rem;
+}
+
+.community {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.community h2 {
+    padding: 0.5rem;
+    font-size: 32px;
+    font-family: 'Macondo';
+    color:#591E3C;
+}
+
+.community p {
+    display: inline-flex;
+}
+
+.community p:first-of-type {
+    font-size: 24px;
+    color:#591E3C;
+    opacity: 0.75;
+    background-color: #fcfaf4c4;
+    padding: 1rem 1.5rem;
+}
+
+.community label {
+    font-size: 18px;
+    color:#591E3C;
+    padding-top: 2.5rem;
+}
+
