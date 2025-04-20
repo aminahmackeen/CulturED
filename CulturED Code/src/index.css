@@ -20,6 +20,9 @@ h1 {
   font-family: 'Macando';
   color: #591E3C;
   font-size: 3.5em;
+}
+
+.explore-h1 {
   background-color: #DEDBD2;
   padding: 20px;
 }
@@ -181,23 +184,29 @@ body main {
 
 /* share story form css  */
 .share-story-container {
-  max-width: 900px;
-  margin: 0 auto;
+  background-color: white;
+  /* max-width: 900px; */
+  margin: 0 5%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
 }
 
-.form-container {
+
+
+.grid-2-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
-.left-column,
+/* .left-column,
 .right-column {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
+} */
 
 input,
 textarea,
@@ -213,7 +222,7 @@ textarea {
   height: 150px;
 }
 
-button {
+/* button {
   padding: 10px 20px;
   font-size: 16px;
   font-family: 'League';
@@ -227,4 +236,38 @@ button {
 button:hover {
   background-color: #B0C4B1;
   color: #4A5759;
+} */
+
+.share-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'League';
+  background-color: #4A5759;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  max-width: 26%;
+}
+
+.share-btn:hover {
+  background-color: #B0C4B1;
+  color: #4A5759;
+}
+
+.theme-1 {
+  background-color: #FCFAF4;
+}
+
+.theme-2 {
+  background-color: #DEDBD2;
+}
+
+.theme-3 {
+  background-color: #B0C4B1;
+  color: #4A5759;
+}
+
+.row {
+  margin: 0
 }

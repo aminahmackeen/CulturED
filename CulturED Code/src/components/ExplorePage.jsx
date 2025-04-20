@@ -80,7 +80,7 @@ const ExplorePage = () => {
 
   return (
     <div>
-      <h1> Explore </h1>
+      <h1 className='explore-h1'> Explore </h1>
       <FilterBar filters={filters} setFilters={setFilters} clearFilter={clearFilter} />
       <div id="exploreContainer">
         {filteredData.map(data => (
