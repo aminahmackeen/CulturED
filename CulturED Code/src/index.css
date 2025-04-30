@@ -194,19 +194,11 @@ body main {
 }
 
 
-
 .grid-2-1 {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
-
-/* .left-column,
-.right-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
 
 input,
 textarea,
@@ -222,21 +214,7 @@ textarea {
   height: 150px;
 }
 
-/* button {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family: 'League';
-  background-color: #4A5759;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
 
-button:hover {
-  background-color: #B0C4B1;
-  color: #4A5759;
-} */
 
 .share-btn {
   padding: 10px 20px;
@@ -270,4 +248,48 @@ button:hover {
 
 .row {
   margin: 0
+}
+
+.story-detail{
+  background-color: #f0efec;
+  color: #333;
+  padding: 1.5rem;
+}
+
+/* LOGIN */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'League';
+  color: #DEDBD2;
+}
+
+.login-header {
+  max-width: 1500px;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+
+.login-form {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-form h2 {
+  color: #631b38; /* deep red like the mockup title */
+  margin-bottom: 1rem;
 }

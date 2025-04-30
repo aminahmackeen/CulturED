@@ -1,6 +1,4 @@
-// src/pages/ExplorePage.jsx
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
 import FilterBar from '../components/FilterBar';
 import YearRow from '../components/YearRow';
 import { ref, onValue } from 'firebase/database';
@@ -23,8 +21,11 @@ const ExplorePage = () => {
     onValue(storiesRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        const parsed = Object.values(data);
-        setStories(parsed);
+        const parsed = Object.entries(data).map(([id, story]) => ({
+          id,
+          ...story
+        }));
+                setStories(parsed);
       }
     });
   }, []);
@@ -35,8 +36,9 @@ const ExplorePage = () => {
 
   const applyFilter = () => {
     const { fromYear, toYear, tag, culture } = filters;
-    const from = parseInt(fromYear);
-    const to = parseInt(toYear);
+    const from = fromYear ? parseInt(fromYear) : -Infinity;
+    const to = toYear ? parseInt(toYear) : Infinity;
+    
 
     const filteredStories = stories.filter(story => {
       const year = parseInt(story.year);
@@ -44,11 +46,8 @@ const ExplorePage = () => {
       const tagMatch = !tag || tagList.some(t => t.includes(tag.toLowerCase()));
       const cultureMatch = !culture || (story.culture || '').toLowerCase().includes(culture.toLowerCase());
 
-      const inRange =
-        (!fromYear && !toYear) ||
-        (fromYear && toYear && year >= from && year <= to) ||
-        (fromYear && !toYear && year === from) ||
-        (!fromYear && toYear && year === to);
+      const inRange = year >= from && year <= to;
+
 
       return tagMatch && cultureMatch && inRange;
     });

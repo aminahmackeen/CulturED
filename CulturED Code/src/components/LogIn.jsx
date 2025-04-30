@@ -1,10 +1,10 @@
-// src/pages/Login.jsx
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import * as firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
 import { auth } from '../firebase';
+import '../index.css'; // Or your specific CSS file
 
 export function Login() {
   const navigate = useNavigate();
@@ -28,14 +28,28 @@ export function Login() {
     });
 
     return () => {
-      ui.reset(); // cleanup on unmount
+      ui.reset();
     };
   }, [navigate]);
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      <div ref={uiRef} />
+    <div className="login-container">
+      <div className="login-header">
+        <p>
+          Join our community to explore and share powerful stories from around the world. Engage
+          with narratives that connect cultures, amplify diverse voices, and contribute to a global
+          timeline of experiences. <strong>Your story matters-- be a part of the conversation.</strong>
+        </p>
+      </div>
+      <div className="login-content">
+        <div className="login-logo">
+          <img src="/cultured_logo-removebg-preview.png" alt="CultureED Logo" />
+        </div>
+        <div className="login-form">
+          <h1>Sign In</h1>
+          <div ref={uiRef} />
+        </div>
+      </div>
     </div>
   );
 }

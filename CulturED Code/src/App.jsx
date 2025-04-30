@@ -7,6 +7,7 @@ import NavBar from './components/NavBar.jsx';
 import { Login } from './components/LogIn';
 import ExplorePage from './components/ExplorePage.jsx';
 import ShareStory from './components/ShareStory.jsx';
+import StoryPage from './components/StoryPage.jsx';
 import { GoogleAuthProvider } from "firebase/auth";
 
 const provider = new GoogleAuthProvider();
@@ -21,6 +22,8 @@ function App() {
           <Route path="/explorepage" element={<ExplorePage />} />
           <Route path="/" element={<Login />} />
           <Route path="/sharestory" element={<ShareStory />} />
+          <Route path="/story/:id" element={<StoryPage />} />
+
 
         </Routes>           
       </main>
