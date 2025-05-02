@@ -15,16 +15,16 @@ export default function NavBar(props) {
                 </div>
                 <ul className="nav">
                     <li className="nav-item py-1 px-2">
-                        <Link to="/explorepage" className="btn header-btn">Explore</Link>
+                        <Link to="/explorepage" className="header-btn">Explore</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <Link to="#" className="btn header-btn">My Communities</Link>
+                        <Link to="#" className="header-btn">My Communities</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <Link to="/sharestory" className="btn header-btn">Share Story</Link>
+                        <Link to="/sharestory" className="header-btn">Share Story</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <Link to="#" className="btn header-btn">Resources</Link>
+                        <Link to="#" className="header-btn">Resources</Link>
                     </li>
                 </ul>
             </nav>

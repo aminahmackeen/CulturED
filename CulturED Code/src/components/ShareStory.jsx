@@ -35,54 +35,6 @@ function ShareStory() {
   };
 
   return (
-    // <div className="share-story-container">
-    //   <h1>Share Your Story</h1>
-    //   <div className="form-container">
-    //     <div className="left-column">
-    //       <input
-    //         type="text"
-    //         placeholder="Title"
-    //         value={title}
-    //         onChange={(e) => setTitle(e.target.value)}
-    //       />
-    //       <textarea
-    //         placeholder="Type story here"
-    //         value={story}
-    //         onChange={(e) => setStory(e.target.value)}
-    //       />
-    //     </div>
-    //     <div className="right-column">
-    //       <input
-    //         type="text"
-    //         placeholder="Tags (comma-separated)"
-    //         value={tags}
-    //         onChange={(e) => setTags(e.target.value)}
-    //       />
-    //       <select value={culture} onChange={(e) => setCulture(e.target.value)}>
-    //         <option value="">Add Culture</option>
-    //         <option value="Hawaiian">Hawaiian</option>
-    //         <option value="Native">Native</option>
-    //         {/* Add more options here */}
-    //       </select>
-    //       <select value={year} onChange={(e) => setYear(e.target.value)}>
-    //         <option value="">Select Year</option>
-    //         {Array.from({ length: 500 }, (_, i) => {
-    //           const y = new Date().getFullYear() - i;
-    //           return <option key={y} value={y}>{y}</option>;
-    //         })}
-    //       </select>
-    //       <label>
-    //         <input
-    //           type="checkbox"
-    //           checked={anonymous}
-    //           onChange={(e) => setAnonymous(e.target.checked)}
-    //         />
-    //         Post as Anonymous
-    //       </label>
-    //     </div>
-    //   </div>
-    //   <button onClick={handlePublicShare}>Share Publicly</button>
-    // </div>
 
     // <!-- level 1 main share story contianer -->
     <div className="share-story-container">
@@ -147,3 +99,54 @@ function ShareStory() {
 }
 
 export default ShareStory;
+
+
+
+    // <div className="share-story-container">
+    //   <h1>Share Your Story</h1>
+    //   <div className="form-container">
+    //     <div className="left-column">
+    //       <input
+    //         type="text"
+    //         placeholder="Title"
+    //         value={title}
+    //         onChange={(e) => setTitle(e.target.value)}
+    //       />
+    //       <textarea
+    //         placeholder="Type story here"
+    //         value={story}
+    //         onChange={(e) => setStory(e.target.value)}
+    //       />
+    //     </div>
+    //     <div className="right-column">
+    //       <input
+    //         type="text"
+    //         placeholder="Tags (comma-separated)"
+    //         value={tags}
+    //         onChange={(e) => setTags(e.target.value)}
+    //       />
+    //       <select value={culture} onChange={(e) => setCulture(e.target.value)}>
+    //         <option value="">Add Culture</option>
+    //         <option value="Hawaiian">Hawaiian</option>
+    //         <option value="Native">Native</option>
+    //         {/* Add more options here */}
+    //       </select>
+    //       <select value={year} onChange={(e) => setYear(e.target.value)}>
+    //         <option value="">Select Year</option>
+    //         {Array.from({ length: 500 }, (_, i) => {
+    //           const y = new Date().getFullYear() - i;
+    //           return <option key={y} value={y}>{y}</option>;
+    //         })}
+    //       </select>
+    //       <label>
+    //         <input
+    //           type="checkbox"
+    //           checked={anonymous}
+    //           onChange={(e) => setAnonymous(e.target.checked)}
+    //         />
+    //         Post as Anonymous
+    //       </label>
+    //     </div>
+    //   </div>
+    //   <button onClick={handlePublicShare}>Share Publicly</button>
+    // </div>

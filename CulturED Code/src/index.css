@@ -153,6 +153,7 @@ body main {
 
 .logo{
   display:inline-flex;
+  align-items: center;
   font-family: 'Macando';
 }
 
@@ -179,6 +180,7 @@ body main {
   background-color: #4A5759;
   font-size: 1.5rem;
   justify-content: space-between;
+  align-items: center;
 }
 
 
