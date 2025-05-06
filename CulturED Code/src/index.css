@@ -1,0 +1,528 @@
+@font-face {
+  font-family: 'Macando';
+  src: url('./assets/League_Spartan,Macondo,Nunito_Sans,Raleway/Macondo/Macondo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'League';
+  src: url('./assets/League_Spartan,Macondo,Nunito_Sans,Raleway/League_Spartan/LeagueSpartan-VariableFont_wght.ttf');
+}
+
+:root {
+  --bg-gradient: linear-gradient(to top, #D1D6CD, #591E3C);
+  --card-bg: #D1D6CD;
+  --year-bg: #ede7eb;
+  --font-color: #333;
+  --button-bg: #B0C4B1;
+}
+
+h1 {
+  font-family: 'Macando';
+  color: #591E3C;
+  font-size: 3.5em;
+}
+
+.explore-h1 {
+  background-color: #DEDBD2;
+  padding: 20px;
+}
+
+body {
+  font-family: 'League', sans-serif;
+  background: var(--bg-gradient);
+  margin: 0;
+  color: #DEDBD2;
+}
+
+body main {
+  padding: 20px;
+}
+
+.title {
+  color: #DEDBD2;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-bar input,
+.filter-bar button {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-family: 'League';
+}
+
+.filter-bar button {
+  background-color: var(--button-bg);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-bar button:hover {
+  background-color: #95af9d;
+}
+
+#exploreContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.year-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  min-height: 140px;
+}
+
+.year-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  background: var(--year-bg);
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+  padding: 10px 5px;
+  border-radius: 6px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.card {
+  background-color: var(--card-bg);
+  width: 150px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.9em;
+  font-family: 'League', Calibri, sans-serif;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 90px;
+}
+
+.spaced-input {
+  margin-right: 90px;
+}
+
+/* NAV */
+.header-btn {
+  color: white;
+}
+
+.logo{
+  display:inline-flex;
+  align-items: center;
+  font-family: 'Macando';
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+.header-nav {
+  position: static;
+  display: flex;
+  top: 0;
+  width: 100%;
+  color: white;
+  background-color: #4A5759;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* share story form css  */
+.share-story-container {
+  background-color: white;
+  /* max-width: 900px; */
+  margin: 0 5%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+}
+
+
+.grid-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+input,
+textarea,
+select,
+label {
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'League';
+  margin: 5px 0;
+}
+
+textarea {
+  height: 150px;
+}
+
+
+
+.share-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'League';
+  background-color: #4A5759;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  max-width: 26%;
+}
+
+.share-btn:hover {
+  background-color: #B0C4B1;
+  color: #4A5759;
+}
+
+.theme-1 {
+  background-color: #FCFAF4;
+}
+
+.theme-2 {
+  background-color: #DEDBD2;
+}
+
+.theme-3 {
+  background-color: #B0C4B1;
+  color: #4A5759;
+}
+
+.row {
+  margin: 0
+}
+
+.story-detail{
+  background-color: #f0efec;
+  color: #333;
+  padding: 1.5rem;
+}
+
+/* LOGIN */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'League';
+  color: #DEDBD2;
+}
+
+.login-header {
+  max-width: 1500px;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+
+.login-form {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-form h2 {
+  color: #631b38; /* deep red like the mockup title */
+  margin-bottom: 1rem;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* community board */
+.comm-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.community-name {
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.comm-button {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* h3, p {
+  font-family: 'League Spartan';
+  color: black;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+nav {
+  background: #4A5759;
+  color: #DEDBD2;
+  margin-bottom: 1rem;
+}
+
+nav > ul {
+  margin-left: 2rem;
+  padding: 0.5em;
+}
+
+nav > ul > li {
+  display: inline-block;
+}
+
+li > a {
+  color: #DEDBD2;
+  float: right;
+  flex-flow:row;
+  margin: 0.3rem 1rem;
+} 
+
+.WebName {
+  font-family: 'Macondo';
+  font-size: 30px;
+  color: #DEDBD2;
+  margin-top: 1rem;
+} */
+
+#edit {
+  color: #591E3C;
+  text-decoration:underline;
+}
+
+.stories-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.story-card {
+  background-color: #d1d6cd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 180px;
+}
+
+.story-title {
+  font-size: 1rem;
+  color: #000;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.story-meta {
+  font-size: 0.8rem;
+}
+
+.member-container {
+  display: inline-flex;
+  margin: 0 1.5rem;
+}
+
+.member-container div {
+  margin: 0 1rem;
+}
+
+.member-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.member-section > h2 {
+  color:#591E3C;
+  margin-bottom: 1rem;
+  font-weight: light;
+}
+
+table {
+  /* table-layout: fixed; */
+  width: 40rem;
+  background-color: #DEDBD2;
+}
+
+.member-header {
+  display: none;
+}
+
+td {
+  color: black;
+}
+
+table tr td:last-child {
+  width: 1rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #fcfaf4;
+}
+
+tr {
+  height: fit-content;
+}
+
+td {
+  font-size: 20px;
+  padding: 0.25rem;
+}
+
+.comm-edit {
+  padding-top: 2.5rem;
+}
+
+.comm-edit p {
+  color: #591E3C;
+  font-size: 20px;
+  margin: 0.5rem;
+}
+
+#invite-link {
+  background-color: #fcfaf4;
+  padding: 0.5rem;
+}
+
+#invite-link p {
+  color: #000;
+  opacity: 0.5;
+}
+
+.community {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.community h2 {
+  padding: 0.5rem;
+  font-size: 32px;
+  font-family: 'Macondo';
+  color:#591E3C;
+}
+
+.community p {
+  display: inline-flex;
+}
+
+.community p:first-of-type {
+  font-size: 24px;
+  color:#591E3C;
+  opacity: 0.75;
+  background-color: #faf5e4;
+  padding: 0.75rem 1rem;
+}
+
+.community label {
+  font-size: 18px;
+  color:#591E3C;
+  padding-top: 2.5rem;
+}
+
+.button {
+  background-color: #edafb8;
+  color: #ad646f;
+  border: none;
+  border-radius: 2px;
+  text-align: center;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.comm-edit div:last-of-type {
+  margin-top: 50px;
+  padding: 0.25rem;
+}
+
+.comm-edit div .button .del-btn {
+  font-size: 20px;
+  padding: 0.5rem;
+
+}

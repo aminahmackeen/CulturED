@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <style>
+        @font-face {
+            font-family: 'Macando';
+            src: url(Macondo,Nunito_Sans,Raleway/Macondo/Macondo-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: 'League';
+            src: url(League_Spartan,Macondo,Nunito_Sans,Raleway/League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
+        }
+
+        body {
+            font-family: 'League', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .user-info {
+            max-width: 600px;
+        }
+
+        .user-info h1 {
+            font-size: 3.5rem;
+            font-family: 'Macando';
+            color: #591E3C;
+            margin: 0;
+        }
+
+        .user-info h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .user-info p {
+            margin-top: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .communities {
+            font-size: 1.2rem;
+        }
+
+        .communities h3 {
+            color: #591E3C;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stories-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stories-section h2 {
+            font-size: 2rem;
+            font-family: 'Macando';
+            color: #591E3C;
+            margin-bottom: 20px;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .story-card {
+            background-color: #d1d6cd;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 180px;
+        }
+
+        .story-title {
+            font-size: 1rem;
+            color: #000;
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+
+        .story-meta {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="user-info">
+                <h1>Joan Doe <span role="img" aria-label="Audio">🔊</span></h1>
+                <h2>Joe-Ann Doe</h2>
+                <p>This is a bio. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="communities">
+                <h3>Shared Communities</h3>
+                <ul>
+                    <li>English 11</li>
+                    <li>Art History Group 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="stories-section">
+            <h2>Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-title">Hawaiian Wedding (1960)</div>
+                    <div class="story-meta">1/2/24<br>Hawaii</div>
+                </div>
+                <div class="story-card">
+                    <div class="story-title">Identity Poem (2024)</div>
+                    <div class="story-meta">1/2/24<br>Hawaii</div>
+                </div>
+                <div class="story-card">
+                    <div class="story-title">My Grandma’s Gulab Jaman Recipe (1975)</div>
+                    <div class="story-meta">1/2/24<br>Pakistan</div>
+                </div>
+                <div class="story-card"></div>
+                <div class="story-card"></div>
+                <div class="story-card"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

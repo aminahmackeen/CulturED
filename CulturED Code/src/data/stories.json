@@ -1,0 +1,153 @@
+[
+    {
+      "title": "Sister's Wedding",
+      "year": 2024,
+      "tags": ["wedding", "family"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Fun Fusion Food",
+      "year": 2024,
+      "tags": ["food"],
+      "culture": "italian"
+    },
+    {
+      "title": "Reflections on \"Home\"",
+      "year": 2024,
+      "tags": ["music", "diaspora"],
+      "culture": "japanese"
+    },
+    {
+      "title": "New song",
+      "year": 2024,
+      "tags": ["music"],
+      "culture": "jamaican"
+    },
+    {
+      "title": "Market",
+      "year": 2024,
+      "tags": ["market"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Uncle's Wedding",
+      "year": 1943,
+      "tags": ["wedding", "family"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Family Food",
+      "year": 1943,
+      "tags": ["food"],
+      "culture": "french"
+    },
+    {
+      "title": "Partition Poem",
+      "year": 1943,
+      "tags": ["music", "partition"],
+      "culture": "indian"
+    },
+    {
+      "title": "Music",
+      "year": 1943,
+      "tags": ["music"],
+      "culture": "japanese"
+    },
+    {
+      "title": "Market",
+      "year": 1943,
+      "tags": ["market"],
+      "culture": "italian"
+    },
+    {
+      "title": "My aunt's wedding",
+      "year": 1922,
+      "tags": ["wedding"],
+      "culture": "greek"
+    },
+    {
+      "title": "Native dish",
+      "year": 1922,
+      "tags": ["food", "indigenous"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Poem for liberation",
+      "year": 1922,
+      "tags": ["music"],
+      "culture": "vietnamese"
+    },
+    {
+      "title": "Workers' song",
+      "year": 1922,
+      "tags": ["music", "labor"],
+      "culture": "french"
+    },
+    {
+      "title": "Grandma's embroidery",
+      "year": 1922,
+      "tags": ["market", "art", "handmade"],
+      "culture": "chinese"
+    },
+    {
+      "title": "My aunt's wedding",
+      "year": 1902,
+      "tags": ["wedding"],
+      "culture": "greek"
+    },
+    {
+      "title": "Native dish",
+      "year": 1902,
+      "tags": ["food", "indigenous"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Poem for liberation",
+      "year": 1902,
+      "tags": ["music"],
+      "culture": "vietnamese"
+    },
+    {
+      "title": "Workers' song",
+      "year": 1902,
+      "tags": ["music", "labor"],
+      "culture": "french"
+    },
+    {
+      "title": "Grandma's embroidery",
+      "year": 1902,
+      "tags": ["market", "art", "handmade"],
+      "culture": "chinese"
+    },
+    {
+      "title": "My aunt's wedding",
+      "year": 1833,
+      "tags": ["wedding"],
+      "culture": "greek"
+    },
+    {
+      "title": "Native dish",
+      "year": 1833,
+      "tags": ["food", "indigenous"],
+      "culture": "hawaiian"
+    },
+    {
+      "title": "Poem for liberation",
+      "year": 1833,
+      "tags": ["music"],
+      "culture": "vietnamese"
+    },
+    {
+      "title": "Workers' song",
+      "year": 1833,
+      "tags": ["music", "labor"],
+      "culture": "french"
+    },
+    {
+      "title": "Grandma's embroidery",
+      "year": 1833,
+      "tags": ["market", "art", "handmade"],
+      "culture": "chinese"
+    }
+  ]
+  

@@ -10,30 +10,41 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
+    <header>
+      <nav class="header-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="landing.html" class="btn header-btn logo">CultureED</a>
+            </li>
+            <li class="nav-item empty"></li>
+            <li class="nav-item py-1 px-2">
+                <a href="explore.html" class="btn header-btn">Explore</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="#" class="btn header-btn">My Communities</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="share-story.html" class="btn header-btn">Share Story</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="#" class="btn header-btn">Resources</a>
+            </li>
+        </ul> 
+      </nav>  
+    </header>
 
-    <nav>
-      <ul>
-        <li class="WebName">CulturED</li>
-        <li><a href= "explore.html">Explore</a></li>
-        <li><a href= "myComm.html">My Communities</a></li>
-        <li><a href= "story.html">Share Story</a></li>
-        <li><a href= "resource.html">Resource</a></li>
-        <li><a href="#"><span class="bx bxs-user-circle" id="user" aria-label="menu" style="font-size:25px"></span></a></li>
-      </ul>
-    </nav>
-
-    <div class="comm-button">
+    <main>
+      <div class="comm-button">
         <a id="comms">&larr;</a>
-    </div>
+      </div>
 
-    <div class="community">
-        <h2>Create A New Community</h2>
-        <label for="comm-name">Name your community:</label>
-        <input type="community-name" id="comm-name" name="comm-name"><br><br>
-        <input type="submit" value="Create">
-    </div>
-
-
+      <div class="community">
+          <h2>Create A New Community</h2>
+          <label for="comm-name">Name your community:</label>
+          <input type="community-name" id="comm-name" name="comm-name"><br><br>
+          <input type="submit" value="Create">
+      </div>
+    </main>
     
     <!-- <noscript>
       You need to enable JavaScript to run this app.
