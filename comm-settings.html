@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CulturED - Community Settings</title>
+    <link href='https://fonts.googleapis.com/css?family=Macondo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="CulturED Code\src\index.css">
+  </head>
+
+  <body>
+    <header>
+      <nav class="header-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="landing.html" class="btn header-btn logo">CultureED</a>
+            </li>
+            <li class="nav-item empty"></li>
+            <li class="nav-item py-1 px-2">
+                <a href="explore.html" class="btn header-btn">Explore</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="#" class="btn header-btn">My Communities</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="share-story.html" class="btn header-btn">Share Story</a>
+            </li>
+            <li class="nav-item py-1 px-2">
+                <a href="#" class="btn header-btn">Resources</a>
+            </li>
+        </ul> 
+      </nav>  
+    </header>
+    <!-- <nav>
+      <ul>
+        <li class="WebName">CulturED</li>
+        <li><a href= "explore.html">Explore</a></li>
+        <li><a href= "myComm.html">My Communities</a></li>
+        <li><a href= "story.html">Share Story</a></li>
+        <li><a href= "resource.html">Resource</a></li>
+        <li><a href="#"><span class="bx bxs-user-circle" id="user" aria-label="menu" style="font-size:25px"></span></a></li>
+      </ul>
+    </nav> -->
+    <body>
+      <!-- level 1 main community settings container -->
+      <div class="comm-settings-container">
+        <!-- level 2 community back button (to My Communities) container -->
+        <div class="comm-button">
+          <a id="comms">&larr; Go back to My Communities</a>
+        </div>
+    
+        <!-- level 2 community name container -->
+        <div class="comm-header">
+            <span>
+                <h1 class="community-name" id="3">Art History Group 2</h1> 
+            </span>
+            <span><a id="edit">Rename</a></span>
+        </div> 
+    
+        <!-- level 2 community members container -->
+        <div class="member-container">
+          <!-- level 3 member list container -->
+          <div class="member-section">
+            <h2>Community Members:</h2>
+            <table id="member-grid">
+              <thead class="member-header">
+                <th>Name</th>
+                <th>Number of Posts</th>
+                <th>Remove</th>
+              </thead>
+              <tbody>
+                <tr class="member-card">
+                  <td class="member-name">John Doe</td>
+                  <td class="member-posts">5 posts</td>
+                  <td><button class="button remove-btn">Remove</button></td>
+                </tr>
+                <tr class="member-card">
+                  <td class="member-name">Joan Doe</td>
+                  <td class="member-posts">0 posts</td>
+                  <td><button class="button remove-btn">Remove</button></td>
+                </tr>
+                <tr class="member-card">
+                  <td class="member-name">Emma</td>
+                  <td class="member-posts">2 posts</td>
+                  <td><button class="button remove-btn">Remove</button></td>
+                </tr>
+                <tr class="member-card">
+                  <td class="member-name">Maisara</td>
+                  <td class="member-posts">7 posts</td>
+                  <td><button class="button remove-btn">Remove</button></td>
+                </tr>
+                <tr class="member-card">
+                  <td class="member-name">Nadra</td>
+                  <td class="member-posts">3 posts</td>
+                  <td><button class="button remove-btn">Remove</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- level 2 community edit container -->
+          <div class="comm-edit">
+            <!-- level 3 community invitation container -->
+            <div class="comm-invite">
+              <p>Join Code: 123AB</p>
+              <p id="invite-link">invite.cultured/arts-123ab</p>
+            </div>
+            <!-- level 3 community deletion container -->
+            <div>
+              <button class="button del-btn">Delete Community</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </body>
+    
+    <!-- <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript> -->
+    <div id="root">
+      <!-- React generated content will go here -->
+    </div>
+  </body>
+</html>
