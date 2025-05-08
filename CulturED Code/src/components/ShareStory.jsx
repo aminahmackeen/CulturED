@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ref, push } from 'firebase/database';
-import { db } from '../firebase';
+import { db } from '../firebase';''
 
 function ShareStory() {
   const [title, setTitle] = useState('');
