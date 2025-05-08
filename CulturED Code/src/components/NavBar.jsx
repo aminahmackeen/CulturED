@@ -4,6 +4,8 @@ import '../index.css';
 
 
 export default function NavBar(props) {
+
+    
     return (
         <header>
             <nav className="header-nav">
@@ -25,6 +27,9 @@ export default function NavBar(props) {
                     </li>
                     <li className="nav-item py-1 px-2">
                         <Link to="#" className="header-btn">Resources</Link>
+                    </li>
+                    <li className="nav-item py-1 px-2">
+                        <button className="header-btn">LogOut</button>
                     </li>
                 </ul>
             </nav>

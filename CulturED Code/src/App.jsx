@@ -8,12 +8,17 @@ import { Login } from './components/LogIn';
 import ExplorePage from './components/ExplorePage.jsx';
 import ShareStory from './components/ShareStory.jsx';
 import StoryPage from './components/StoryPage.jsx';
-import { GoogleAuthProvider } from "firebase/auth";
+// import { GoogleAuthProvider } from "firebase/auth";
 
-const provider = new GoogleAuthProvider();
+// const provider = new GoogleAuthProvider();
 
 function App() {
   
+  // const [currentUser, setCurrentUser] = useState("loggedout@email.com");
+  // console.log("App's currentUser: ", currentUser)
+
+
+
   return (
     <div>
       <NavBar />
