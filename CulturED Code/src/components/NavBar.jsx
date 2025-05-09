@@ -18,7 +18,7 @@ export default function NavBar(props) {
                         <Link to="/explorepage" className="header-btn">Explore</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <Link to="#" className="header-btn">My Communities</Link>
+                        <Link to="/my-communities" className="header-btn">My Communities</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
                         <Link to="/sharestory" className="header-btn">Share Story</Link>

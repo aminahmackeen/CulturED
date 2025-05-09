@@ -22,7 +22,7 @@ h1 {
   font-size: 3.5em;
 }
 
-.explore-h1 {
+.explore-h1, .my-comm-h1 {
   background-color: #DEDBD2;
   padding: 20px;
 }
@@ -30,6 +30,7 @@ h1 {
 body {
   font-family: 'League', sans-serif;
   background: var(--bg-gradient);
+  min-height: 100vh;
   margin: 0;
   color: #DEDBD2;
 }
@@ -309,6 +310,11 @@ textarea {
   justify-content: flex-start;
 }
 
+.edit-btn {
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
 .community-name {
   margin-left: 30px;
   margin-right: 20px;
@@ -318,6 +324,12 @@ textarea {
 .comm-button {
   margin-left: 1rem;
   margin-top: 1rem;
+}
+
+.comm-empty-stories {
+  color:#000;
+  font-size: 1rem;
+  background-color: #d1d6cd;
 }
 
 /* h3, p {
@@ -400,7 +412,7 @@ li > a {
   font-size: 0.8rem;
 }
 
-.member-container {
+.member-container, .communities-container {
   display: inline-flex;
   margin: 0 1.5rem;
 }
@@ -427,12 +439,8 @@ table {
   background-color: #DEDBD2;
 }
 
-.member-header {
+.member-header, .communities-header {
   display: none;
-}
-
-td {
-  color: black;
 }
 
 table tr td:last-child {
@@ -448,8 +456,16 @@ tr {
 }
 
 td {
+  color: black;
   font-size: 20px;
   padding: 0.25rem;
+}
+
+.tr-comm-name {
+  background-color: #000;
+  border: #000;
+  margin: 0.5rem;
+  width: fit-content;
 }
 
 .comm-edit {
@@ -460,6 +476,13 @@ td {
   color: #591E3C;
   font-size: 20px;
   margin: 0.5rem;
+}
+
+.my-comm-btns {
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  border-width: 0.1;
+  background-color: #DEDBD2;
 }
 
 #invite-link {
@@ -479,12 +502,14 @@ td {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background-color: #DEDBD2;
+  padding: 0.5rem;
 }
 
-.community h2 {
+.community > h2 {
   padding: 0.5rem;
   font-size: 32px;
-  font-family: 'Macondo';
+  font-family: 'Macando';
   color:#591E3C;
 }
 
@@ -516,6 +541,13 @@ td {
   cursor: pointer;
 }
 
+#comms {
+  border: none;
+  background:none;
+  color: black;
+  cursor: pointer;
+}
+
 .comm-edit div:last-of-type {
   margin-top: 50px;
   padding: 0.25rem;
@@ -524,5 +556,42 @@ td {
 .comm-edit div .button .del-btn {
   font-size: 20px;
   padding: 0.5rem;
+}
 
+.communities-container {
+  margin: 1.5rem 1rem;
+}
+
+td .tr-comm-name {
+  background-color: #f8f8f8;
+  border-width: thin;
+  padding-right: 1rem;
+}
+
+td:not(:first-child) {
+  border-width: thin;
+  padding-right: 0.5rem;
+}
+
+#communities-grid {
+  color: #000;
+}
+
+.comm-edit-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.comm-invite {
+  transform: translateY(-50%);
+}
+
+.code-invite {
+  background-color: #DEDBD2;
+  padding: 0.5rem;
+}
+
+.comm-del-btn {
+  transform: translate(75%, 50%);
 }
