@@ -4,6 +4,7 @@ import { ref, push } from 'firebase/database';
 import { db } from '../firebase';
 
 function ShareStory() {
+
   const [title, setTitle] = useState('');
   const [story, setStory] = useState('');
   const [anonymous, setAnonymous] = useState(false);

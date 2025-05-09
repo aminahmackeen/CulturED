@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GoogleAuthProvider } from 'firebase/auth';
 import * as firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
 import { auth } from '../firebase';
+import { GoogleAuthProvider } from 'firebase/auth';
 import '../index.css'; // Or your specific CSS file
+import DEFAULT_USERS from '../data/users.json'
 
 export function Login() {
+
   const navigate = useNavigate();
   const uiRef = useRef(null);
 
@@ -17,20 +19,22 @@ export function Login() {
     ui.start(uiRef.current, {
       signInOptions: [GoogleAuthProvider.PROVIDER_ID],
       signInFlow: 'popup',
+      credentialHelper: 'none',
       callbacks: {
         signInSuccessWithAuthResult: (authResult) => {
-          console.log('User signed in:', authResult.user);
+          console.log('User signed in:', authResult.user);          
           navigate('/explorepage');
           return false;
         },
-      },
-      credentialHelper: 'none',
+      }
     });
 
     return () => {
       ui.reset();
     };
   }, [navigate]);
+
+
 
   return (
     <div className="login-container">

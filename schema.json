@@ -1,0 +1,42 @@
+{
+  "communities": {
+    
+    "firbaseKey": {
+      "joinCode": "",
+      "owner": "",
+      "name": "",
+      "users": []
+    }
+
+  },
+
+  "users": {
+  
+    "firbaseKey": {
+      "email": "",
+      "userName": "",
+      "name": "",
+      "phonetic": "",
+      "audio": "",
+      "bio": ""
+    }
+  },
+
+  "stories": {
+   
+    "firbaseKey": {
+      "owner": "user@email.com",
+      "anonymous": false,
+      "communities": [],
+      "title": "",
+      "prompt": "",
+      "story": "",
+      "media": [],
+      "year": "",
+      "cultures": [],
+      "tags": [],
+      "language": ""
+    }
+  }
+
+}
