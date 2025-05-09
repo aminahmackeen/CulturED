@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import '../index.css';
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
 
 
 export default function NavBar(props) {
 
-    
+    const handleSignOut = (event) => {
+        console.log("signing out");
+        signOut(auth);
+    }
+
     return (
         <header>
             <nav className="header-nav">
@@ -29,7 +35,7 @@ export default function NavBar(props) {
                         <Link to="#" className="header-btn">Resources</Link>
                     </li>
                     <li className="nav-item py-1 px-2">
-                        <button className="header-btn">LogOut</button>
+                        <button className="header-btn" onClick={handleSignOut}>LogOut</button>
                     </li>
                 </ul>
             </nav>

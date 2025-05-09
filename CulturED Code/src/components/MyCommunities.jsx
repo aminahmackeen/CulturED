@@ -52,7 +52,6 @@ function MyCommunities() {
     console.log("signing out");
     const auth = getAuth();
     signOut(auth);
-
   }
 
   
