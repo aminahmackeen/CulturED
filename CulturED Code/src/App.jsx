@@ -10,6 +10,7 @@ import ShareStory from './components/ShareStory.jsx';
 import StoryPage from './components/StoryPage.jsx';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from './firebase';
+import AccountSettings from './components/AccountSettings.jsx';
 
 // const provider = new GoogleAuthProvider();
 
@@ -38,6 +39,15 @@ function App() {
 
   }, [])
 
+  const [userDataArray, setUserDataArray] = useState([{}]);
+  console.log(userDataArray); // Debug
+
+  function handleUserFormSubmit(userFormData) {
+    console.log("userFormData: ", userFormData);
+    const updatedUserDataArray = [...userDataArray, userFormData];
+    setUserDataArray(updatedUserDataArray);
+  };
+
   return (
     <div>
       <NavBar />
@@ -47,6 +57,7 @@ function App() {
           <Route path="/" element={<Login  />} />
           <Route path="/sharestory" element={<ShareStory />} />
           <Route path="/story/:id" element={<StoryPage />} />
+          <Route path="/accountsettings" element={<AccountSettings onSubmit={handleUserFormSubmit}/>} />
 
 
         </Routes>           

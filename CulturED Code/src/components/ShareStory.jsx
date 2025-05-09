@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ref, push } from 'firebase/database';
 import { db } from '../firebase';
-// import { getAuth } from 'firebase/auth';
-
 
 function ShareStory() {
-
-  // const auth = getAuth();
-  // console.log(auth.currentUser.email);
 
   const [title, setTitle] = useState('');
   const [story, setStory] = useState('');
