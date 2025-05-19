@@ -62,12 +62,13 @@ function ShareStory() {
             {/* <!-- level 3 Tags --> */}
             <div className="theme-3 col-md-3 ms-md-3 d-flex flex-column">
                 <input type="text" placeholder="Tags (comma-separated)" value={tags} onChange={(e) => setTags(e.target.value)} />
-                <select value={culture} onChange={(e) => setCulture(e.target.value)}>
-                  <option value="">Add Culture</option>
-                  <option value="Hawaiian">Hawaiian</option>
-                  <option value="Native">Native</option>
-                  {/* Add more options here */}
-                </select>
+                <input
+  type="text"
+  placeholder="Type culture"
+  value={culture}
+  onChange={(e) => setCulture(e.target.value)}
+/>
+
                 <select value={year} onChange={(e) => setYear(e.target.value)}>
                   <option value="">Select Year</option>
                   {Array.from({ length: 500 }, (_, i) => {
