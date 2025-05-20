@@ -82,13 +82,13 @@ function ShareStory() {
 
         {/* <!-- level 2 submit story buttons --> */}
         <div  className="d-flex flex-column">
-            <label>
+            <label className="theme-1 p-1">
               <input
                 type="checkbox"
                 checked={anonymous}
                 onChange={(e) => setAnonymous(e.target.checked)}
               />
-              Post as Anonymous
+                 Post as Anonymous
             </label>
             <button className="share-btn" onClick={handlePublicShare}>Share Publicly</button>
             <button className="share-btn">Share to my Communities</button>
