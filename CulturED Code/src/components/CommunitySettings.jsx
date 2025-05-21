@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ref, onValue, update, remove } from 'firebase/database';
+import { ref, onValue, update, remove, get } from 'firebase/database';
 import { db } from '../firebase';
 
 // display community name
@@ -21,13 +21,24 @@ const CommunitySettings = () => {
     useEffect(() => {
         // listen to changes to community name
         const commRef = ref(db, `communities/${id}`);
-        onValue(commRef, (snapshot) => {                // listen for changes
+        onValue(commRef, async (snapshot) => {                // listen for changes
             const data = snapshot.val();                // get change
             if (data) {
-                setEditedName(data.name || "Community");    // if got changes, set community name to input
+                setEditedName(data.name || "Community Name Unsaved");    // if got changes, set community name to input
                 setInvite(id);                              // set change to id
                 if (data.users) {
-                    setMembers(Object.values(data.users));  // if community has members, assign to members
+                    const userIds = Object.values(data.users);
+
+                    const usersPromises = userIds.map(async (uid) => {
+                        const userSnap = await get(ref(db, `users/${uid}`))
+                        //return userSnap.val();
+                        const userData = userSnap.val();
+                        if (!userData) {console.warn(`No user data found for uid: ${uid}`); return null;}
+                        //console.log(userData.formalName, userData.userName);
+                        return {...userData, id: uid};
+                    })
+                    const usersInfo = (await Promise.all(usersPromises)).filter(Boolean);
+                    setMembers(usersInfo);  // if community has members, assign to members
                 }
             }
         })
@@ -82,7 +93,7 @@ const CommunitySettings = () => {
     }
 
     return (
-        <div class="comm-settings-container">
+        <div className="comm-settings-container">
             {/* Go Back to MyCommunities */}
             <div className="comm-button">
                 <button id="comms" onClick={() => navigate('/my-communities')}>
@@ -115,7 +126,7 @@ const CommunitySettings = () => {
                             <tr>
                                 <th>Name</th>
                                 <th>Number of Posts</th>
-                                <th>Remove</th>
+                                {/* <th>Remove</th> */}
                             </tr>
                         </thead>
                         <tbody>
@@ -123,10 +134,11 @@ const CommunitySettings = () => {
                             // <div className="comm-list-zero">
                                 <tr><td colSpan="3">No members in the community yet</td></tr>
                             // </div>
-                            ) : (members.map((user) => (
-                                <tr key={user.firebaseKey}>
-                                    <td>{user.name}</td>
-                                    <td>{getStoryCount(user.firebaseKey)} posts</td>
+                            ) : (members.map((user, index) => (
+                                //console.log(index, user.email);
+                                <tr key={index}>
+                                    <td>{user.formalName}</td>
+                                    <td>{getStoryCount(user.id)} posts</td>
                                 </tr>
                             )))
                             }
@@ -143,18 +155,11 @@ const CommunitySettings = () => {
                     {/* invite link */}
                     <div className="comm-invite">
                         <h3>Invite link</h3>
-                        <p className="code-invite">insert-domain.com/join/community/{invite}</p>
+                        <p className="code-invite">{window.location.origin}/join/community/{invite}</p>
                         <p>Share this code to others!</p>
                     </div>
                     {/* delete button */}
-                    <button className="comm-del-btn" onClick={handleDeleteComm} style={{
-                        backgroundColor: "red",
-                        color: "white",
-                        border: "none",
-                        padding: "0.5rem 1rem",
-                        cursor: "pointer",
-                        }}
-                    >Delete Community</button>
+                    <button className="comm-del-btn" onClick={handleDeleteComm}>Delete Community</button>
                 </div>
             </div>
         

@@ -37,6 +37,9 @@ export default function JoinCommunity() {
             const updatedUsers = [...(community.users || []), user.uid];
             await update(commRef, { users: updatedUsers });
 
+            const userCommRef =  ref(db, `users/${user.uid}/communities/${id}`);
+            await set(userCommRef, {id: id, name: community.name, dateJoined: Date.now(),});
+
             setLoading(false);
             navigate(`/community/${id}`);
             }

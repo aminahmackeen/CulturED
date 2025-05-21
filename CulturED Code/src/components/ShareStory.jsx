@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ref, push } from 'firebase/database';
+import { ref, push, get } from 'firebase/database';
 import { db } from '../firebase';
 
-function ShareStory() {
+const ShareStory = ({userId}) => {
 
   const [title, setTitle] = useState('');
   const [story, setStory] = useState('');
@@ -11,7 +11,46 @@ function ShareStory() {
   const [culture, setCulture] = useState('');
   const [tags, setTags] = useState('');
   const [year, setYear] = useState(new Date().getFullYear());
+  const [commList, setCommList] = useState([]);
+  const [selectedComm, setSelectedComm] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+      // uncomment after fully coded
+      // if (!userId) 
+      //   return (
+      //     <div>
+      //       <h2>Log in to view your communities.</h2>
+      //       <button onClick={() => navigate('/login')}>Go to Login</button>
+      //     </div>
+      //   );
+      console.log("ShareStory loaded with userId:", userId);
+
+      const fetchComms = async () => {
+          const userCommSnap = await get(ref(db, `users/${userId}/communities`));
+          const userComms = userCommSnap.val() || {};
+          const commIds = Object.keys(userComms);
+
+          const commListData = await Promise.all(
+              commIds.map(async (commId) => {
+                  const commSnap = await get(ref(db, `communities/${commId}`));
+                  const commData = commSnap.val();
+                  if (commData) {
+                      return {
+                          id: commId,
+                          name: commData.name
+                      }
+                  }
+                  return null;
+              })
+          )
+
+          setCommList(commListData.filter(Boolean)); //remove null
+        }
+        fetchComms();
+    }, [userId]);
+  
 
   const handlePublicShare = async () => {
     const confirmed = window.confirm("Are you sure you want to share this story publicly?");
@@ -29,6 +68,46 @@ function ShareStory() {
         await push(ref(db, 'stories'), newStory);
         console.log("Story saved successfully");
         navigate('/explorepage');
+      } catch (error) {
+        console.error("Error saving story:", error);
+      }
+    }
+  };
+
+  // const handleCommSelect = (commId) => {
+  //   setSelectedComm((prev) => {
+  //     prev.includes(commId)
+  //     ? prev.filter((id) => id != commId)
+  //     : [...prev, commId]
+  //   })
+  // }
+
+  const handleCommunityShare = async () => {
+    const confirmed = window.confirm("Are you sure you want to share this story to the selected?");
+    
+    if (confirmed) {
+      const newStory = {
+        title,
+        story,
+        anonymous,
+        culture,
+        tags: tags.split(',').map(tag => tag.trim()),
+        year: parseInt(year),
+        communities: selectedComm,
+      };
+
+      try {
+        const newStoryRef = await push(ref(db, 'stories'), newStory);
+        const newStoryKey = newStoryRef.key;
+        
+        for (const commId of selectedComm) {
+          const commStory = {...newStory, storyId: newStoryKey, commId}
+          await push(ref(db, `communities/${commId}/stories`), commStory);
+        }
+
+        setShowDropdown(false);
+        console.log("Story saved successfully");
+        navigate('/my-communities');
       } catch (error) {
         console.error("Error saving story:", error);
       }
@@ -90,7 +169,27 @@ function ShareStory() {
               Post as Anonymous
             </label>
             <button className="share-btn" onClick={handlePublicShare}>Share Publicly</button>
-            <button className="share-btn">Share to my Communities</button>
+            <button className="share-btn" onClick={() => setShowDropdown((prev) => !prev)}>Share to my Communities</button>
+            {showDropdown && 
+            <div className="dropdown-comm">
+              {commList.length === 0 ? (
+                <p>You are not in any communities</p>
+              ) : (
+                commList.map((comm) => (
+                  <div key={comm.id}>
+                    <label>
+                      <input type="checkbox" value={comm.id} checked={selectedComm.includes(comm.id)} 
+                      onChange={(e) => {
+                        const checked = e.target.checked;
+                        setSelectedComm((prev) => checked ? [...prev, comm.id] : prev.filter((id) => id !== comm.id))
+                      }} />
+                      {comm.name}
+                    </label>
+                  </div>
+                ))
+              )}
+              <button onClick={handleCommunityShare}>Share</button>
+            </div>}
         </div>
 
     </div>

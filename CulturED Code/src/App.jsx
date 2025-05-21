@@ -21,31 +21,36 @@ import AccountSettings from './components/AccountSettings.jsx';
 
 function App() {
   
-  const [currentUser, setCurrentUser] = useState("loggedout@email.com");
+  //const [currentUser, setCurrentUser] = useState("loggedout@email.com");
+  const [currentUser, setCurrentUser] = useState(null);
   console.log("App's currentUser: ", currentUser)
+  const [loading, setLoading] = useState(true);
+  const [userDataArray, setUserDataArray] = useState([{}]);
+  console.log(userDataArray); // Debug
 
   useEffect(() => {
     // const auth = getAuth();
 
-    onAuthStateChanged(auth, (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       console.log("auth state changed");
       console.log(firebaseUser);
 
       if (firebaseUser != null) { // user signed in
         firebaseUser.userName = firebaseUser.email.split('@')[0];
         firebaseUser.name = firebaseUser.displayName;
-        setCurrentUser(firebaseUser.email);
+        //setCurrentUser(firebaseUser.email);
+        setCurrentUser(firebaseUser);
       }
       else { // is null, user signed out
-        setCurrentUser("loggedout@email.com");
+        //setCurrentUser("loggedout@email.com");
+        setCurrentUser(null);
       }
-
+      setLoading(false);
     })
-
+    return () => unsubscribe();
   }, [])
 
-  const [userDataArray, setUserDataArray] = useState([{}]);
-  console.log(userDataArray); // Debug
+  if (loading) return <div>Loading CulturED Website...</div>
 
   function handleUserFormSubmit(userFormData) {
     console.log("userFormData: ", userFormData);
@@ -60,14 +65,14 @@ function App() {
           <Routes>
             <Route path="/explorepage" element={<ExplorePage />} />
             <Route path="/" element={<Login  />} />
-            <Route path="/sharestory" element={<ShareStory />} />
+            <Route path="/sharestory" element={<ShareStory userId={currentUser?.uid}/>} />
             <Route path="/story/:id" element={<StoryPage />} />
-          <Route path="/accountsettings" element={<AccountSettings onSubmit={handleUserFormSubmit}/>} />
-            <Route path="/create-community" element={<CreateCommunity />} />
-            <Route path="/community/:id" element={<CommunityBoard />} />
-            <Route path="/community-settings/:id" element={<CommunitySettings />} />
-            <Route path="/my-communities" element={<MyCommunities />} />
-            <Route path="/join/community/:id" element={<JoinCommunity />} />
+            <Route path="/accountsettings" element={<AccountSettings onSubmit={handleUserFormSubmit}/>} />
+            <Route path="/create-community" element={<CreateCommunity user={currentUser?.uid}/>} />
+            <Route path="/community/:id" element={<CommunityBoard user={currentUser}/>} />
+            <Route path="/community-settings/:id" element={<CommunitySettings user={currentUser}/>} />
+            <Route path="/my-communities" element={<MyCommunities userId={currentUser?.uid}/>} />
+            <Route path="/join/community/:id" element={<JoinCommunity user={currentUser}/>} />
           </Routes>             
         </main>
       </div>

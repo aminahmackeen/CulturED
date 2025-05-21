@@ -303,76 +303,12 @@ textarea {
   box-sizing: border-box;
 } */
 
-/* community board */
-.comm-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.edit-btn {
-  padding-left: 1.5rem;
-  cursor: pointer;
-}
 
 .community-name {
   margin-left: 30px;
   margin-right: 20px;
   margin-bottom: 10px;
 }
-
-.comm-button {
-  margin-left: 1rem;
-  margin-top: 1rem;
-}
-
-.comm-empty-stories {
-  color:#000;
-  font-size: 1rem;
-  background-color: #d1d6cd;
-}
-
-/* h3, p {
-  font-family: 'League Spartan';
-  color: black;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-p {
-  font-size: 18px;
-}
-
-nav {
-  background: #4A5759;
-  color: #DEDBD2;
-  margin-bottom: 1rem;
-}
-
-nav > ul {
-  margin-left: 2rem;
-  padding: 0.5em;
-}
-
-nav > ul > li {
-  display: inline-block;
-}
-
-li > a {
-  color: #DEDBD2;
-  float: right;
-  flex-flow:row;
-  margin: 0.3rem 1rem;
-} 
-
-.WebName {
-  font-family: 'Macondo';
-  font-size: 30px;
-  color: #DEDBD2;
-  margin-top: 1rem;
-} */
 
 #edit {
   color: #591E3C;
@@ -412,89 +348,156 @@ li > a {
   font-size: 0.8rem;
 }
 
-.member-container, .communities-container {
-  display: inline-flex;
-  margin: 0 1.5rem;
+
+/* .button {
+  background-color: #edafb8;
+  color: #ad646f;
+  border: none;
+  border-radius: 2px;
+  text-align: center;
+  padding: 0.25rem;
+  cursor: pointer;
+} */
+
+table tr {
+  width: 100%;
 }
 
-.member-container div {
-  margin: 0 1rem;
+td .tr-comm-name {
+  background-color: #f8f8f8;
+  border-width: thin;
+  padding-right: 1rem;
 }
 
-.member-section {
+td:not(:first-child) {
+  border-width: thin;
+  padding-right: 0.5rem;
+}
+
+#communities-grid {
+  color: #000;
+}
+
+.comm-edit-header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.comm-invite {
+  transform: translateY(-50%);
+}
+
+.code-invite {
+  background-color: #DEDBD2;
   padding: 0.5rem;
 }
 
-.member-section > h2 {
-  color:#591E3C;
-  margin-bottom: 1rem;
-  font-weight: light;
+.comm-del-btn {
+  transform: translate(75%, 50%);
+}
+
+/* MyCommunities back button */
+.comm-button {
+  margin: 1rem;
+}
+
+#comms {
+  border: none;
+  background:none;
+  color: #D1D6CD;
+  cursor: pointer;
+}
+
+#comms:hover {
+  text-decoration: underline;
+}
+
+
+/* MyCommunities */
+.communities-container {
+  margin: 1.5rem 1rem;
 }
 
 table {
-  /* table-layout: fixed; */
-  width: 40rem;
+  width: 100%;
   background-color: #DEDBD2;
+  table-layout: fixed;
 }
 
-.member-header, .communities-header {
-  display: none;
+td, th {
+  word-wrap: break-word;
+  padding: 8px; 
 }
 
-table tr td:last-child {
-  width: 1rem;
-}
-
-table tr:nth-child(even) {
+.communities-header th {
+  border: #000;
   background-color: #fcfaf4;
+  font-family: 'League';
+  text-align: center;
 }
 
-tr {
-  height: fit-content;
-}
-
-td {
-  color: black;
-  font-size: 20px;
-  padding: 0.25rem;
-}
-
-.tr-comm-name {
-  background-color: #000;
+.td-comm-name {
+  color: #000;
   border: #000;
   margin: 0.5rem;
-  width: fit-content;
+  width: 60%;
 }
 
-.comm-edit {
-  padding-top: 2.5rem;
+.td-comm-name button {
+  border: none;
+  background-color: transparent;
 }
 
-.comm-edit p {
-  color: #591E3C;
-  font-size: 20px;
-  margin: 0.5rem;
+.td-comm-name button:hover {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.td-comm-member, .td-comm-date {
+  width: 15%;
+  text-align: center;
+}
+
+.td-comm-leave {
+  width: 10%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.td-comm-leave button {
+  padding: 4px 10px;
+  border: none;
+  font-size: 0.875rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #edafb8;
+}
+
+.td-comm-leave button:hover {
+  text-decoration: underline;
 }
 
 .my-comm-btns {
   margin-top: 2rem;
-  margin-left: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.my-comm-btns button {
+  padding: .5rem;
+  font-size: 1rem;
   border-width: 0.1;
   background-color: #DEDBD2;
+  text-align: center;
 }
 
-#invite-link {
-  background-color: #fcfaf4;
-  padding: 0.5rem;
+.my-comm-btns button:hover {
+  text-decoration: underline;
 }
 
-#invite-link p {
-  color: #000;
-  opacity: 0.5;
-}
-
+/* CreateCommunity */
 .community {
   position: absolute;
   top: 50%;
@@ -531,21 +534,106 @@ td {
   padding-top: 2.5rem;
 }
 
-.button {
-  background-color: #edafb8;
-  color: #ad646f;
-  border: none;
-  border-radius: 2px;
-  text-align: center;
-  padding: 0.25rem;
-  cursor: pointer;
+/* Community Board */
+.comm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d1d6cd;
 }
 
-#comms {
+.edit-btn {
+  padding-right: 1.5rem;
+}
+
+.edit-btn button {
   border: none;
-  background:none;
+  background-color: transparent;
+}
+
+.edit-btn button:hover {
+  text-decoration: underline;
+}
+
+.comm-empty-stories {
+  background-color: #d1d6cd;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* or 100vh if you want full screen height */
+  text-align: center;
+  color: #555;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+/* Community Settings */
+/* CommunitySettings, MyCommunities container */
+.member-container, .communities-container {
+  display: inline-flex;
+  margin: 0 1.5rem;
+}
+
+.member-container div {
+  margin: 0 1rem;
+}
+
+.member-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.member-section h2 {
+  color:#591E3C;
+  margin: 1.25rem 0rem;
+  font-weight: light;
+}
+
+/* community settings table */
+#member-grid {
+  /* table-layout: fixed; */
+  width: 100%;
+  background-color: #DEDBD2;
+}
+
+.member-header {
+  display: none;
+}
+
+#member-grid th:last-child {
+  width: 15%;
+}
+
+#member-grid tr td:last-child {
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #fcfaf4;
+}
+
+tr {
+  height: fit-content;
+}
+
+td {
   color: black;
-  cursor: pointer;
+  font-size: 20px;
+  padding: 0.25rem;
+}
+
+.comm-edit {
+  padding-top: 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.comm-edit p {
+  color: #591E3C;
+  font-size: 20px;
+  margin: 0.5rem;
 }
 
 .comm-edit div:last-of-type {
@@ -553,45 +641,24 @@ td {
   padding: 0.25rem;
 }
 
-.comm-edit div .button .del-btn {
-  font-size: 20px;
+#invite-link {
+  background-color: #fcfaf4;
   padding: 0.5rem;
 }
 
-.communities-container {
-  margin: 1.5rem 1rem;
-}
-
-td .tr-comm-name {
-  background-color: #f8f8f8;
-  border-width: thin;
-  padding-right: 1rem;
-}
-
-td:not(:first-child) {
-  border-width: thin;
-  padding-right: 0.5rem;
-}
-
-#communities-grid {
+#invite-link p {
   color: #000;
-}
-
-.comm-edit-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.comm-invite {
-  transform: translateY(-50%);
-}
-
-.code-invite {
-  background-color: #DEDBD2;
-  padding: 0.5rem;
+  opacity: 0.5;
 }
 
 .comm-del-btn {
-  transform: translate(75%, 50%);
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer
+}
+
+.comm-del-btn:hover {
+  text-decoration: underline;
 }

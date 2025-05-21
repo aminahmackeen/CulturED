@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { ref, get, child } from 'firebase/database';
 import { db } from '../firebase';
+import StoryCard from './StoryCard';
 
 const CommunityBoard = () => {
     const { id } = useParams();         // get id of current community
@@ -24,7 +25,11 @@ const CommunityBoard = () => {
 
                 if (storySnap.exists()) {
                     const allStories = storySnap.val();
-                    const filteredStories = Object.values(allStories).filter((story) =>
+                    const allStoriesId = Object.entries(allStories).map(([key, story]) => ({
+                        id: key,
+                        ...story
+                    }))
+                    const filteredStories = allStoriesId.filter((story) =>
                     story.communities && story.communities.includes(id));                   // filter to only stories posted in said community, then store in stories var
 
                     setStories(filteredStories);                                            
@@ -49,7 +54,7 @@ const CommunityBoard = () => {
             {/* Community Name & edit community button */}
             <div className="comm-header">
                 <span><h1>{communityName}</h1></span>
-                <span className="edit-btn"><a onClick={() => navigate(`/community-settings/${id}`)}>Edit</a></span>
+                <span className="edit-btn"><button onClick={() => navigate(`/community-settings/${id}`)}>✏️Edit</button></span>
             </div>
 
             {/* Stories display */}
@@ -57,11 +62,20 @@ const CommunityBoard = () => {
                  <div className="stories-grid">
                     {stories.length > 0 ? (
                         stories.map((story, index) => (
-                            <div key={index} className="story-card">
-                                <div className="story-title">{story.title}</div>
-                                <div className="story-meta">{story.year}<br />{story.culture}<br />{story.tags}</div>
-                            </div>
-                        ))
+                        <Link key={index} to={`/story/${story.id}`} style={{ textDecoration: 'none' }}>
+                            <StoryCard
+                            title={story.title}
+                            tag={story.tag}
+                            culture={story.culture}
+                            />
+                        </Link>
+                        )
+                        // stories.map((story, index) => (
+                        //     <div key={index} className="story-card">
+                        //         <div className="story-title">{story.title}</div>
+                        //         <div className="story-meta">{story.year}<br />{story.culture}<br />{story.tags}</div>
+                        //     </div>
+                        )
                     ) : (
                         <div className="comm-empty-stories">
                             <p>No stories shared here yet</p>

@@ -3,12 +3,18 @@ import { useNavigate } from 'react-router-dom';
 // import { v4 as uuidv4 } from "uuid";
 import { ref, push, set } from 'firebase/database';
 import { db } from '../firebase';
+import { getAuth } from "firebase/auth";
 
 // This component creates the community and stores it in the database
 // After creation, leads to the specific community board
-const CreateCommunity = () => {
+const CreateCommunity = ({ user }) => {
     const navigate = useNavigate();
     const [communityName, setCommunityName] = useState(""); 
+    const auth = getAuth();
+    //const currentUser = auth.currentUser;
+    const userId = user;
+
+    //console.log(userId);
     
     // This function handles the creation of a new community when button is clicked.
     const handleCreate = async (e) => {
@@ -26,8 +32,15 @@ const CreateCommunity = () => {
             const newCommunityRef = push(communityRef);     // creates unique id for "communities" and returns ref of said id
             await set(newCommunityRef, {                    // stores community data to newly created community
                 name: communityName,
+                owner: userId,
                 dateCreated: Date.now()
+                , users: [userId]
             });
+
+            //console.log(Date.now());
+            // add community to user's community list
+            const userCommunityRef = ref(db, `users/${userId}/communities/${newCommunityRef.key}`);
+            await set(userCommunityRef, {id: newCommunityRef.key, name: communityName, dateJoined: Date.now(),});
 
             // Go to community board of newly created community
             navigate(`/community/${newCommunityRef.key}`, {state: { communityName }, });
