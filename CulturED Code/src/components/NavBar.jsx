@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import '../index.css';
 
+
 export default function NavBar(props) {
 
 
@@ -10,7 +11,7 @@ export default function NavBar(props) {
             <nav className="header-nav">
                 <div className="logo">
                     <Link to="/">
-                        <img src="../../public/cultured_logo-removebg-preview.png" alt="CulturED Logo" />
+                    <img src="/LOGO.png" alt="CultureED Logo" />
                     </Link>
                     <Link to="/"><h2 className="title">CulturED</h2></Link>
                 </div>

@@ -47,7 +47,7 @@ export function Login() {
       </div>
       <div className="login-content">
         <div className="login-logo">
-          <img src="/cultured_logo-removebg-preview.png" alt="CultureED Logo" />
+        <img src="/LOGO.png" alt="CultureED Logo" />
         </div>
         <div className="login-form">
           <h1>Sign In</h1>
